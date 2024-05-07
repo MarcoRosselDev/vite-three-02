@@ -6,10 +6,10 @@ export function Cubos(props) {
   const { nodes, materials } = useGLTF('./public/model/cubos.glb')
 
   const meshRef = useRef()
-  //useFrame((state, delta) => (meshRef.current.rotation.y += delta))
+  //useFrame((state, delta) => (meshRef.current.position.x += delta))
 
   return (
-    <group {...props} dispose={null} ref={meshRef}>
+    <group {...props} dispose={null} ref={meshRef}  visible={true} >
       <mesh geometry={nodes.Cube.geometry} material={materials.Material} />
       <mesh geometry={nodes.Cube001.geometry} material={materials['Material.001']} position={[5.159, 0, 0]} />
       <mesh geometry={nodes.Cube002.geometry} material={materials['Material.002']} position={[5.159, 0, -11.287]} />
